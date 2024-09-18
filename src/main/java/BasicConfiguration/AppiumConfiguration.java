@@ -40,11 +40,13 @@ public class AppiumConfiguration {
 		service.start(); // starting appium server automatically
 
 		UiAutomator2Options options = new UiAutomator2Options();
-		options.setDeviceName("Saswataemulator"); // UiAutomator2Options/options contains capabilities of device and app details
-		options.setApp(
-				"\\Users\\CODECLOUDS-SASWATAC\\eclipse-workspace\\Appium\\src\\test\\java\\resources\\Api-debug.apk"); // Which
+		options.setDeviceName("SaswataEmulator"); // UiAutomator2Options/options contains capabilities of device and app details
+	//	options.setApp(
+	//			"\\Users\\CODECLOUDS-SASWATAC\\eclipse-workspace\\Appium\\src\\test\\java\\resources\\Api-debug.apk"); // Which
 																																																							// to
-
+		options.setApp(
+				"\\Users\\CODECLOUDS-SASWATAC\\eclipse-workspace\\Appium\\src\\test\\java\\resources\\General-Store.apk");
+		
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options); // arguments => Server address,
 																				// AndroidVersion(Capabilities)
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -78,6 +80,13 @@ public class AppiumConfiguration {
 			        "direction", direction,
 			        "percent", 0.75
 			    ));
+	}
+	
+	public Double getConvertedAmount(String amount) {
+		
+		Double actualPrice = Double.parseDouble(amount.substring(1));
+	return actualPrice;	
+	
 	}
 	
 

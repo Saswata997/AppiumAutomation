@@ -53,6 +53,7 @@ public class MiscellaneousActions extends AppiumConfiguration { // Accessing par
 		
 		driver.findElement(By.xpath("//android.widget.EditText[@resource-id='android:id/edit']"))
 				.sendKeys(driver.getClipboardText());
+		//keynote action code
 		driver.pressKey(new KeyEvent(AndroidKey.ENTER));
 		driver.findElement(By.xpath("//android.widget.Button[@resource-id='android:id/button1']")).click();
 		driver.pressKey(new KeyEvent(AndroidKey.BACK));
